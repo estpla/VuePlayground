@@ -1,0 +1,3 @@
+export const YES_NO_REQUEST = 'YES_NO_REQUEST'
+export const YES_NO_SUCCESS = 'YES_NO_SUCCESS'
+export const YES_NO_FAILURE = 'YES_NO_FAILURE'
