@@ -33,6 +33,13 @@ export default {
   methods: {
     changeData () {
       this.$store.commit('increment')
+      this.$hub.invoke('send', 'user1', 'mess1')
+        .done(function () {
+          console.log('Invocation of send succeeded')
+        })
+        .fail(function (error) {
+          console.log('Invocation of send failed. Error: ' + error)
+        })
       this.getyesno()
       /* this.data = [
         {

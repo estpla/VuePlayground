@@ -9,8 +9,11 @@ import VuexStore from '@/vuex/store'
 import { sync } from 'vuex-router-sync'
 
 import $ from 'jquery'
+
 import DataTables from 'datatables.net'
 import 'datatables.net-dt/css/jquery.datatables.css'
+
+import VueSignalR from '@/plugins/vue-signalr'
 
 Vue.config.productionTip = false
 
@@ -22,6 +25,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store(VuexStore)
 
 sync(store, router)
+
+Vue.use(VueSignalR, 'http://localhost:3000', 'chatHub', store)
 
 /* eslint-disable no-new */
 new Vue({
